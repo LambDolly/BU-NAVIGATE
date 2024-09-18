@@ -17,7 +17,7 @@
   .navbar {
     background-color: #ffffff;
     color: #fff;
-    padding: 10px 40px;
+    padding: 10px 20px; /* 为整个导航栏添加内边距 */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,11 +25,21 @@
    
   .logo {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: #c50000; /* 添加这行 */
+    align-items: center;
   }
-   
+
+  .logo-image {
+    width: 75px; /* 调整此值以适应您的需求 */
+    height: auto; /* 让高度自动调整以保持原始比例 */
+    object-fit: contain; /* 确保整个图片可见 */
+    margin-right: 15px; /* 在logo和文字之间添加空间 */
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+
   .main-logo {
     font-size: 24px; /* 或您希望的大小 */
     font-weight: bold;
