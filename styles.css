@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+  }
+   
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+  }
+   
+  .navbar {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+   
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #c50000; /* 添加这行 */
+  }
+   
+  .main-logo {
+    font-size: 24px; /* 或您希望的大小 */
+    font-weight: bold;
+    color: #c50000; /* 添加这行 */
+  }
+
+  .sub-logo {
+    font-size: 14px; /* 较小的字号 */
+    margin-top: -5px; /* 调整与上方文字的间距 */
+    color: #c50000; /* 添加这行 */
+  }
+   
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+   
+  .navbar li {
+    position: relative;
+    margin-right: 15px;
+  }
+   
+  .navbar li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px;
+  }
+   
+  .navbar li a:hover {
+    color: #c50000;
+  }
+   
+  .search-box {
+    position: relative;
+  }
+   
+  .search-box input {
+    width: 200px;
+    height: 30px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: #eff6f8;
+  }
+   
+  .buttons {
+    display: flex;
+  }
+   
+  .buttons button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+   
+  .login {
+    color: #232c53;
+    background-color: #fff;
+  }
+   
+  .register {
+    color: #fff;
+    background-color: #232c53;
+    border-radius: 10px;
+  }
+  /* 添加响应式设计的样式 */
+@media screen and (max-width: 768px) {
+    .navbar {
+      position: relative;
+      padding: 10px 10px;
+    }
+   
+    /* 在小屏幕上隐藏导航栏和搜索框等 */
+    .navbar ul,
+    .search-box,
+    .buttons {
+      display: none;
+    }
+   
+    /* 显示汉堡式图标 */
+    .navbar .menu-icon {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+    }
+   
+    .navbar .menu-icon span {
+      display: block;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background: #232c53;
+      border-radius: 4px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+    }
+   
+    .navbar .menu-icon span:nth-child(1) {
+      top: 0px;
+    }
+   
+    .navbar .menu-icon span:nth-child(2),
+    .navbar .menu-icon span:nth-child(3) {
+      top: 10px;
+    }
+   
+    .navbar .menu-icon span:nth-child(4) {
+      top: 20px;
+    }
+   
+    /* 菜单展开时的样式 */
+    .navbar.open .menu-icon span:nth-child(1) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+   
+    .navbar.open .menu-icon span:nth-child(2) {
+      transform: rotate(45deg);
+    }
+   
+    .navbar.open .menu-icon span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+   
+    .navbar.open .menu-icon span:nth-child(4) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+   
+    /* 展开菜单时的导航栏样式 */
+    .navbar.open ul {
+      display: flex;
+      flex-direction: column;
+    }
+   
+    .navbar.open .search-box,
+    .navbar.open .buttons {
+      display: block;
+    }
+   
+    .search-box,
+    .buttons {
+      display: block;
+    }
+   
+    #navbarMenu {
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 0;
+      background-color: #ffffff;
+      border-radius: 10px;
+      position: absolute;
+      left: 0;
+      bottom: -200px;
+      text-align: center;
+    }
+   
+    #navbarMenu li a {
+      font-size: 20px;
+    }
+  }
