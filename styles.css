@@ -223,7 +223,7 @@
     width: 90%;
 }
 
-.search-container input {
+.search-container input[type="text"] {
     flex: 1;
     padding: 10px;
     font-size: 16px;
