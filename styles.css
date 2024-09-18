@@ -6,7 +6,12 @@
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #000000;
+    background-image: url('bu_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
   }
    
   .navbar {
@@ -197,3 +202,133 @@
       font-size: 20px;
     }
   }
+
+.central-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+}
+
+.central-search h1 {
+    color: #c50000;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    max-width: 600px;
+    width: 90%;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #c50000;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #c50000;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #a40000;
+}
+
+/* 为了确保文字可读性，我们可以添加一个半透明的遮罩 */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* 白色半透明遮罩 */
+    z-index: -1;
+}
+
+/* 调整其他元素样式以适应新背景 */
+.navbar, .central-search, .link-sections {
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.link-section {
+    background-color: rgba(255, 255, 255, 0.9); /* 稍微更不透明 */
+}
+
+/* 可能需要调整文字颜色以增加对比度 */
+body, .navbar a, .link-section a {
+    color: #333;
+}
+
+h1, h2, .navbar .logo {
+    color: #c50000; /* 保持红色主题 */
+}
+
+.link-sections {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.link-section {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.link-section h2 {
+    color: #c50000;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.link-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.link-section li {
+    margin-bottom: 10px;
+}
+
+.link-section a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-section a:hover {
+    color: #c50000;
+}
+
+@media (max-width: 768px) {
+    .link-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-section {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
