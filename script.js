@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 点击页面其他地方时关闭下拉菜单
+    // 点击页面其他���方时关闭下拉菜单
     document.addEventListener('click', function(event) {
         if (!searchEngineDropdown.contains(event.target) && !searchEngineButton.contains(event.target)) {
             searchEngineDropdown.classList.remove('show');
@@ -72,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const userInput = document.getElementById('userInput');
     const sendMessage = document.getElementById('sendMessage');
     const chatMessages = document.getElementById('chatMessages');
+    const searchEngineDropdown = document.querySelector('.search-engine-dropdown');
+    const chatInput = document.querySelector('.chat-input input');
 
     // 判断是否为移动设备
     function isMobile() {
@@ -83,7 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
         chatContainer.classList.add('open');
         chatButton.style.display = 'none';
         if (isMobile()) {
-            document.body.style.overflow = 'hidden'; // 防止背景滚动
+            document.body.classList.add('chat-open');
+            searchEngineDropdown.classList.add('hide');
         }
     });
 
@@ -92,7 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
         chatContainer.classList.remove('open');
         chatButton.style.display = 'block';
         if (isMobile()) {
-            document.body.style.overflow = ''; // 恢复背景滚动
+            document.body.classList.remove('chat-open');
+            searchEngineDropdown.classList.remove('hide');
         }
     });
 
@@ -155,6 +159,23 @@ document.addEventListener('DOMContentLoaded', function() {
             addMessageToChat('AI', 'Sorry, I encountered an error. Please try again later.');
         }
     }
+
+    // 防止输入框获得焦点时页面放大
+    chatInput.addEventListener('focus', function() {
+        if (isMobile()) {
+            // 临时调整 viewport
+            const viewport = document.querySelector('meta[name=viewport]');
+            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
+        }
+    });
+
+    chatInput.addEventListener('blur', function() {
+        if (isMobile()) {
+            // 恢复原始 viewport 设置
+            const viewport = document.querySelector('meta[name=viewport]');
+            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+        }
+    });
 });
 
 // 控制底部信息栏的显示和隐藏
