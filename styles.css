@@ -48,7 +48,7 @@
   }
 
   .sub-logo {
-    font-size: 14px; /* 较小的字号 */
+    font-size: 14px; /* 较小的号 */
     margin-top: -5px; /* 调整与上方文字的间距 */
     color: #c50000; /* 添加这行 */
   }
@@ -354,22 +354,28 @@ h1, h2, .navbar .logo {
 /* 聊天按钮样式 */
 .chat-button {
     position: fixed;
-    right: 0;
+    right: -10px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #c50000;
+    background-color: rgba(197, 0, 0, 0.6);
     color: white;
-    padding: 20px 15px 20px 20px;
-    border-radius: 25px 0 0 25px;
+    padding: 15px 10px 15px 20px;
+    border-radius: 20px 0 0 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    font-size: 16px;
+    transition: all 0.3s ease-in-out, display 0s;
+    font-size: 14px;
     font-weight: bold;
     box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
 }
 
 .chat-button:hover {
-    background-color: #a40000;
+    right: 0;
+    background-color: rgba(197, 0, 0, 1);
+}
+
+.chat-button span {
+    position: relative;
+    left: -5px;
 }
 
 /* 聊天容器样式 */
@@ -478,4 +484,44 @@ h1, h2, .navbar .logo {
 
 .chat-input button:hover {
     background-color: #a40000;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    .chat-button {
+        right: -15px;
+        padding: 10px 8px 10px 15px;
+        font-size: 12px;
+    }
+
+    .chat-container {
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .chat-container.open {
+        right: 0;
+    }
+
+    .chat-header {
+        padding: 10px;
+    }
+
+    .chat-messages {
+        padding: 10px;
+    }
+
+    .chat-input {
+        padding: 10px;
+    }
+
+    .chat-input input {
+        font-size: 14px;
+    }
+
+    .chat-input button {
+        font-size: 14px;
+    }
 }
