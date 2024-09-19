@@ -11,12 +11,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendMessage = document.getElementById('sendMessage');
     const chatMessages = document.getElementById('chatMessages');
 
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
     chatButton.addEventListener('click', () => {
         chatContainer.classList.add('open');
+        chatButton.style.display = 'none';
+        if (isMobile()) {
+            document.body.style.overflow = 'hidden'; // 防止背景滚动
+        }
     });
 
     closeChat.addEventListener('click', () => {
         chatContainer.classList.remove('open');
+        chatButton.style.display = 'block';
+        if (isMobile()) {
+            document.body.style.overflow = ''; // 恢复背景滚动
+        }
     });
 
     sendMessage.addEventListener('click', sendUserMessage);
@@ -74,4 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
             addMessageToChat('AI', '抱歉,出现了一些问题。请稍后再试。');
         }
     }
+
+    // 添加窗口大小变化监听
+    window.addEventListener('resize', () => {
+        if (!isMobile() && chatContainer.classList.contains('open')) {
+            document.body.style.overflow = '';
+        }
+    });
 });
