@@ -156,3 +156,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// 控制底部信息栏的显示和隐藏
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.querySelector('.footer');
+    let lastScrollTop = 0;
+    let isFooterVisible = true;
+
+    function handleFooterVisibility() {
+        if (window.innerWidth <= 768) {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && isFooterVisible) {
+                // 向下滚动，隐藏footer
+                footer.style.transform = 'translateY(100%)';
+                isFooterVisible = false;
+            } else if (scrollTop < lastScrollTop && !isFooterVisible) {
+                // 向上滚动，显示footer
+                footer.style.transform = 'translateY(0)';
+                isFooterVisible = true;
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        } else {
+            // 在大屏幕上，始终显示footer
+            footer.style.transform = 'translateY(0)';
+            isFooterVisible = true;
+        }
+    }
+
+    window.addEventListener('scroll', handleFooterVisibility);
+    window.addEventListener('resize', handleFooterVisibility);
+
+    // 初始状态下处理footer可见性
+    handleFooterVisibility();
+});
