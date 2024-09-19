@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
- 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>导航栏</title>
+    <title>BU NAVIGATE</title>
     <link rel="stylesheet" href="styles.css">
 </head>
- 
 <body>
+    <!-- 导航栏 -->
     <div class="navbar" id="nav">
+        <!-- Logo部分 -->
         <div class="logo">
             <img src="images/WechatIMG152.jpg" alt="BU Logo" class="logo-image">
             <div class="logo-text">
@@ -17,19 +17,23 @@
                 <div class="sub-logo">Boston University</div>
             </div>
         </div>
+        <!-- 移动端菜单图标 -->
         <div class="menu-icon" id="menuIcon">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
         </div>
+        <!-- 导航菜单 -->
         <ul id="navbarMenu">
             <li><a href="#">Home</a></li>
             <li><a href="#">More</a></li>
             <li><a href="#">Contact</a></li>
+            <!-- 搜索框 -->
             <div class="search-box">
                 <input type="text" placeholder="Search...">
             </div>
+            <!-- 登录注册按钮 -->
             <div class="buttons">
                 <button class="login">Log in</button>
                 <button class="register">Sign in</button>
@@ -37,44 +41,72 @@
         </ul>
     </div>
     
-    <div class="central-search">
-        <h1>Welcome to BU NAVIGATE</h1>
-        <form class="search-container" action="https://www.google.com/search" method="get" target="_blank">
-            <input type="text" name="q" placeholder="（嵌入了Google）Search for the information you need...">
-            <button type="submit">search</button>
-        </form>
+    <!-- 主要内容区域 -->
+    <div class="main-content">
+        <!-- 中央搜索区域 -->
+        <div class="central-search">
+            <h1>Welcome to BU NAVIGATE</h1>
+            <!-- 搜索表单 -->
+            <form class="search-container" id="searchForm" action="https://www.google.com/search" method="get" target="_blank">
+                <!-- 搜索引擎下拉菜单 -->
+                <div class="search-engine-dropdown">
+                    <button type="button" class="search-engine-button" id="searchEngineButton">
+                        <img src="images/de5693d39d05f6b081d74401973ce2df.jpeg" alt="Current Search Engine" class="search-engine-icon" id="currentEngineIcon">
+                    </button>
+                    <div class="dropdown-content" id="searchEngineDropdown">
+                        <button type="button" class="engine-option" data-engine="google" data-action="https://www.google.com/search">
+                            <img src="images/de5693d39d05f6b081d74401973ce2df.jpeg" alt="Google Logo" class="search-engine-icon">
+                        </button>
+                        <button type="button" class="engine-option" data-engine="baidu" data-action="https://www.baidu.com/s">
+                            <img src="images/u=838505001,1009740821&fm=3028&app=3028&f=PNG&fmt=auto&q=100&size=f254_80.webp" alt="Baidu Logo" class="search-engine-icon">
+                        </button>
+                        <button type="button" class="engine-option" data-engine="yahoo" data-action="https://search.yahoo.com/search">
+                            <img src="images/f7c524278d955ed8748bbd166739c5d3.jpeg" alt="Yahoo Logo" class="search-engine-icon">
+                        </button>
+                    </div>
+                </div>
+                <input type="text" name="q" placeholder="Search for the information you need...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- 链接区域 -->
+        <div class="link-sections">
+            <!-- 快速到达链接 -->
+            <div class="link-section">
+                <h2>Fast Arrive</h2>
+                <ul>
+                    <li><a href="https://learn.bu.edu/" target="_blank">BlackBoard</a></li>
+                    <li><a href="https://bucom.sona-systems.com/Default.aspx?ReturnUrl=%2fmain.aspx" target="_blank">SONA</a></li>
+                    <li><a href="https://mybustudent.bu.edu/psp/BUPRD/EMPLOYEE/SA/s/WEBLIB_HCX_GN.H_DASHBOARD.FieldFormula.IScript_Main?" target="_blank">DashBroad</a></li>
+                </ul>
+            </div>
+            <!-- 学术工具链接 -->
+            <div class="link-section">
+                <h2>Academic tool</h2>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </div>
+            <!-- 生活服务链接 -->
+            <div class="link-section">
+                <h2>Life service</h2>
+                <ul>
+                    <li><a href="#">Link 1 </a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <div class="link-sections">
-        <div class="link-section">
-            <h2>Fast Arrive</h2>
-            <ul>
-                <li><a href="https://learn.bu.edu/" target="_blank">BlackBoard</a></li>
-                <li><a href="https://bucom.sona-systems.com/Default.aspx?ReturnUrl=%2fmain.aspx" target="_blank">SONA</a></li>
-                <li><a href="https://mybustudent.bu.edu/psp/BUPRD/EMPLOYEE/SA/s/WEBLIB_HCX_GN.H_DASHBOARD.FieldFormula.IScript_Main?" target="_blank">DashBroad</a></li>
-            </ul>
-        </div>
-        <div class="link-section">
-            <h2>Academic tool</h2>
-            <ul>
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-            </ul>
-        </div>
-        <div class="link-section">
-            <h2>Life service</h2>
-            <ul>
-                <li><a href="#">Link 1 </a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-            </ul>
-        </div>
-    </div>
-
+    <!-- AI聊天按钮 -->
     <div class="chat-button" id="chatButton">
         <span>AI</span>
     </div>
+    <!-- AI聊天窗口 -->
     <div class="chat-container" id="chatContainer">
         <div class="chat-header">
             <h3>AI Assistant</h3>
@@ -87,7 +119,14 @@
         </div>
     </div>
 
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; Copyright 2024 BU NAVIGATE. .</p>
+            <p>Contact us: <a href="mailto:hongyang0626@outlook.com">hongyang0626@outlook.com</a></p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
- 
 </html>
