@@ -170,7 +170,7 @@ body {
 
 .search-engine-button {
     background: none;
-    border: 2px solid #c50000; /* 添加红色��框 */
+    border: 2px solid #c50000; /* 添加红色边框 */
     border-radius: 5px; /* 添加圆角 */
     cursor: pointer;
     padding: 0;
@@ -335,7 +335,7 @@ body::before {
 .link-section a {
     color: #333;
     text-decoration: none;
-    line-height: 1.6; /* 增加行高，改善可读性 */
+    line-height: 1.6; /* 增加行高，改可读性 */
     display: inline-block; /* 使行高生效 */
 }
 
@@ -490,6 +490,7 @@ h1, h2, .navbar .logo {
     text-align: center;
     padding: 10px 0;
     z-index: 1000;
+    transition: transform 0.3s ease-in-out;
 }
 
 .footer-content {
@@ -724,4 +725,24 @@ h1, h2, .navbar .logo {
     src: url('../fonts/TrajanPro-Bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    body {
+        padding-bottom: 0; /* 移除底部padding */
+    }
+
+    .footer {
+        position: fixed;
+        transform: translateY(100%);
+    }
+
+    .footer.show {
+        transform: translateY(0);
+    }
+
+    .footer-content {
+        font-size: 14px;
+    }
 }
