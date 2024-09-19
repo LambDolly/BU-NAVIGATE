@@ -16,23 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
         event.stopPropagation();
         searchEngineDropdown.classList.toggle('show');
         
-        // 如果下拉菜单显示，添加动画效果
         if (searchEngineDropdown.classList.contains('show')) {
             setTimeout(() => {
                 const options = searchEngineDropdown.querySelectorAll('.engine-option');
                 options.forEach((option, index) => {
-                    setTimeout(() => {
-                        option.style.opacity = '1';
-                        option.style.transform = 'translateY(0)';
-                    }, index * 100);
+                    option.style.transitionDelay = `${0.1 + index * 0.05}s`;
                 });
-            }, 50);
+            }, 0);
         } else {
-            // 如果下拉菜单隐藏，重置样式
             const options = searchEngineDropdown.querySelectorAll('.engine-option');
             options.forEach(option => {
-                option.style.opacity = '0';
-                option.style.transform = 'translateY(-20px)';
+                option.style.transitionDelay = '0s';
             });
         }
     });
