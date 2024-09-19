@@ -1,8 +1,13 @@
+/* 全局盒模型设置 */
 * {
     box-sizing: border-box;
-  }
-   
-  body {
+}
+
+/* 页面主体样式 */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -11,347 +16,341 @@
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    min-height: 100vh;
-  }
-   
-  .navbar {
-    background-color: #ffffff;
-    color: #fff;
-    padding: 10px 20px; /* 为整个导航栏添加内边距 */
+    padding-bottom: 60px; /* 为底部信息栏留出空间 */
+    box-sizing: border-box;
+}
+
+/* 主要内容区域样式 */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #ffffff; /* 使用红色背景 */
+    color: #c50000; /* 将文字颜色改为白色，以提高可读性 */
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-   
-  .logo {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Logo样式 */
+.logo {
     display: flex;
     align-items: center;
-  }
+}
 
-  .logo-image {
-    width: 75px; /* 调整此值以适应您的需求 */
-    height: auto; /* 让高度自动调整以保持原始比例 */
-    object-fit: contain; /* 确保整个图片可见 */
-    margin-right: 15px; /* 在logo和文字之间添加空间 */
-  }
+.logo-image {
+    width: 75px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 15px;
+}
 
-  .logo-text {
+.logo-text {
     display: flex;
     flex-direction: column;
-    font-family: 'Trajan Pro', serif; /* 添加后备字体 */
-  }
+    font-family: 'Trajan Pro', serif;
+}
 
-  .main-logo {
-    font-size: 24px; /* 或您希望的大小 */
+.main-logo {
+    font-size: 24px;
     font-weight: bold;
-    color: #c50000; /* 添加这行 */
-  }
+    color: #c50000;
+}
 
-  .sub-logo {
-    font-size: 14px; /* 较小的号 */
-    margin-top: -5px; /* 调整与上方文字的间距 */
-    color: #c50000; /* 添加这行 */
-  }
-   
-  .navbar ul {
+.sub-logo {
+    font-size: 14px;
+    margin-top: -5px;
+    color: #c50000;
+}
+
+.navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-  }
-   
-  .navbar li {
+}
+
+.navbar li {
     position: relative;
     margin-right: 15px;
-  }
-   
-  .navbar li a {
-    color: #000000;
+}
+
+.navbar li a {
+    color: #000000; /* 将链接颜色改为白色 */
     text-decoration: none;
     padding: 10px;
-  }
-   
-  .navbar li a:hover {
-    color: #c50000;
-  }
-   
-  .search-box {
+}
+
+.navbar li a:hover {
+    color: #c50000; /* 悬停时稍微调暗 */
+    text-decoration: underline;
+}
+
+.search-box {
     position: relative;
-  }
-   
-  .search-box input {
+}
+
+.search-box input {
     width: 200px;
     height: 30px;
     border: none;
     padding: 5px 10px;
     border-radius: 6px;
     background-color: #eff6f8;
-  }
-   
-  .buttons {
+}
+
+.buttons {
     display: flex;
-  }
-   
-  .buttons button {
+}
+
+.buttons button {
     margin-left: 10px;
     padding: 5px 10px;
     border: none;
     cursor: pointer;
-  }
-   
-  .login {
+}
+
+.login {
     color: #232c53;
     background-color: #fff;
-  }
-   
-  .register {
+}
+
+.register {
     color: #fff;
     background-color: #232c53;
     border-radius: 10px;
-  }
-  /* 添加响应式设计的样式 */
-@media screen and (max-width: 768px) {
-    .navbar {
-      position: relative;
-      padding: 10px 10px;
-    }
-   
-    /* 在小屏幕上隐藏导航栏和搜索框等 */
-    .navbar ul,
-    .search-box,
-    .buttons {
-      display: none;
-    }
-   
-    /* 显示汉堡式图标 */
-    .navbar .menu-icon {
-      display: block;
-      position: relative;
-      width: 30px;
-      height: 20px;
-      cursor: pointer;
-    }
-   
-    .navbar .menu-icon span {
-      display: block;
-      position: absolute;
-      height: 4px;
-      width: 100%;
-      background: #232c53;
-      border-radius: 4px;
-      opacity: 1;
-      left: 0;
-      transform: rotate(0deg);
-      transition: 0.25s ease-in-out;
-    }
-   
-    .navbar .menu-icon span:nth-child(1) {
-      top: 0px;
-    }
-   
-    .navbar .menu-icon span:nth-child(2),
-    .navbar .menu-icon span:nth-child(3) {
-      top: 10px;
-    }
-   
-    .navbar .menu-icon span:nth-child(4) {
-      top: 20px;
-    }
-   
-    /* 菜单展开时的样式 */
-    .navbar.open .menu-icon span:nth-child(1) {
-      top: 18px;
-      width: 0%;
-      left: 50%;
-    }
-   
-    .navbar.open .menu-icon span:nth-child(2) {
-      transform: rotate(45deg);
-    }
-   
-    .navbar.open .menu-icon span:nth-child(3) {
-      transform: rotate(-45deg);
-    }
-   
-    .navbar.open .menu-icon span:nth-child(4) {
-      top: 18px;
-      width: 0%;
-      left: 50%;
-    }
-   
-    /* 展开菜单时的导航栏样式 */
-    .navbar.open ul {
-      display: flex;
-      flex-direction: column;
-    }
-   
-    .navbar.open .search-box,
-    .navbar.open .buttons {
-      display: block;
-    }
-   
-    .search-box,
-    .buttons {
-      display: block;
-    }
-   
-    #navbarMenu {
-      width: 100%;
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px 0;
-      background-color: #ffffff;
-      border-radius: 10px;
-      position: absolute;
-      left: 0;
-      bottom: -200px;
-      text-align: center;
-    }
-   
-    #navbarMenu li a {
-      font-size: 20px;
-    }
-  }
+}
 
+/* 中央搜索区域样式 */
 .central-search {
+    width: 1963px; /* 设置固定宽度 */
+    height: 682px; /* 设置固定高度 */
+    max-width: 100%; /* 确保在小屏幕上不会溢出 */
+    margin: 20px auto; /* 上下间距20px，左右自动居中 */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    text-align: center;
+    justify-content: center; /* 垂直居中内容 */
+    align-items: center; /* 水平居中内容 */
+    box-sizing: border-box; /* 确保padding不会增加总尺寸 */
 }
 
 .central-search h1 {
-    color: #c50000;
-    margin-bottom: 20px;
+    margin-bottom: 40px; /* 增加标题和搜索框之间的间距 */
+    text-align: center; /* 确保标题居中 */
 }
 
 .search-container {
+    width: 80%; /* 搜索容器宽度，可以根据需要调整 */
+    max-width: 1200px; /* 搜索容器最大宽度 */
+    display: flex; /* 使用flex布局 */
+    justify-content: center; /* 水平居中搜索框和按钮 */
+    align-items: center; /* 垂直对齐搜索框和按钮 */
+    position: relative; /* 添加这行 */
+}
+
+.search-engine-dropdown {
+    position: absolute; /* 改为绝对定位 */
+    left: 0; /* 将下拉菜单定位到搜索框的左侧 */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2; /* 确保下拉菜单在输入框上方 */
+}
+
+.search-engine-button {
+    background: none;
+    border: 2px solid #c50000; /* 添加红色��框 */
+    border-radius: 5px; /* 添加圆角 */
+    cursor: pointer;
+    padding: 0;
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 垂直居中图标 */
+    justify-content: center; /* 水平居中图标 */
+    width: 40px; /* 设置一个固定宽度 */
+    height: 40px; /* 与输入框高度一致 */
+    margin-right: 5px; /* 添加右侧间距 */
+}
+
+.search-engine-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: calc(100% + 5px); /* 稍微增加与按钮的距离 */
+    left: 0; /* 将下拉列表与按钮左对齐 */
+    background-color: #ffffff;
+    border: 2px solid #c50000;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top center;
+    transform: scaleY(0);
+    transition: 
+        opacity 0.2s ease, 
+        transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        visibility 0.2s;
     display: flex;
-    max-width: 600px;
-    width: 90%;
+    flex-direction: column;
+    padding: 5px;
+    width: 40px; /* 设置宽度与按钮一致 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+.dropdown-content.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+.engine-option {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* 使选项填满整个宽度 */
+    height: 40px;
+    margin: 2px 0;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.dropdown-content.show .engine-option {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+.engine-option:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+.engine-option:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.engine-option:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.05);
+}
+
+.engine-option img {
+    width: 24px;
+    height: 24px;
 }
 
 .search-container input[type="text"] {
-    flex: 1;
-    padding: 10px;
+    flex: 1; /* 让输入框占据剩余空间 */
+    min-width: 0; /* 允许输入框缩小 */
+    height: 40px; /* 设置一个固定高度 */
+    padding: 0 10px 0 50px; /* 增加左侧padding，为图标留出空间 */
     font-size: 16px;
     border: 2px solid #c50000;
-    border-right: none;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px;
+    text-align: center; /* 将提示文字居中显示 */
 }
 
-.search-container button {
-    padding: 10px 20px;
+.search-container input[type="text"]::placeholder {
+    text-align: center; /* 确保占位符文本也居中 */
+}
+
+.search-container button[type="submit"] {
+    height: 40px; /* 与输入框高度一致 */
+    padding: 0 20px;
     background-color: #c50000;
     color: white;
     font-size: 16px;
     border: none;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px;
     cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s ease; /* 添加过渡效果 */
 }
 
-.search-container button:hover {
+.search-container button[type="submit"]:hover {
     background-color: #a40000;
+    transform: scale(1.05); /* 添加轻微的放大效果 */
 }
 
-/* 为了确保文字可读性，我们可以添加一个半透明的遮罩 */
 body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.7); /* 白色半透明遮罩 */
-    z-index: -1;
+    content: none;
 }
 
-/* 调整其他元素样式以适应新背景 */
-.navbar, .central-search, .link-sections {
-    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
-    margin: 20px;
+/* 链接区域样式 */
+.link-sections {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px; /* 增加顶部边距，使其与搜索区域分开 */
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.link-section {
-    background-color: rgba(255, 255, 255, 0.9); /* 稍微更不透明 */
-}
-
-/* 可能需要调整文字颜色以增加对比度 */
-body, .navbar a, .link-section a {
-    color: #333;
-}
-
-h1, h2, .navbar .logo {
-    color: #c50000; /* 保持红色主题 */
-}
-
-.link-sections {
     display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
-    padding: 0 20px;
+    justify-content: space-between;
 }
 
 .link-section {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
     width: 30%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .link-section h2 {
     color: #c50000;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* 增加标题和下方文字的间距 */
     font-size: 1.2em;
+    text-align: left;
 }
 
 .link-section ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 .link-section li {
-    margin-bottom: 10px;
+    margin-bottom: 12px; /* 增加列表项之间的间距 */
 }
 
 .link-section a {
     color: #333;
     text-decoration: none;
-    transition: color 0.3s;
+    line-height: 1.6; /* 增加行高，改善可读性 */
+    display: inline-block; /* 使行高生效 */
 }
 
 .link-section a:hover {
+    text-decoration: underline;
+}
+
+body, .navbar a, .link-section a {
+    color: #333;
+}
+
+h1, h2, .navbar .logo {
     color: #c50000;
 }
 
-@media (max-width: 768px) {
-    .link-sections {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .link-section {
-        width: 80%;
-        margin-bottom: 20px;
-    }
-}
-
-@font-face {
-    font-family: 'Trajan Pro';
-    src: url('../fonts/TrajanPro-Bold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-/* 聊天按钮样式 */
 .chat-button {
     position: fixed;
     right: -10px;
@@ -378,7 +377,6 @@ h1, h2, .navbar .logo {
     left: -5px;
 }
 
-/* 聊天容器样式 */
 .chat-container {
     position: fixed;
     right: -350px;
@@ -401,7 +399,6 @@ h1, h2, .navbar .logo {
     opacity: 1;
 }
 
-/* 聊天头部样式 */
 .chat-header {
     background-color: #c50000;
     color: white;
@@ -423,7 +420,6 @@ h1, h2, .navbar .logo {
     cursor: pointer;
 }
 
-/* 聊天消息区域样式 */
 .chat-messages {
     flex: 1;
     overflow-y: auto;
@@ -432,7 +428,6 @@ h1, h2, .navbar .logo {
     flex-direction: column;
 }
 
-/* 聊天气泡样式 */
 .message {
     max-width: 80%;
     margin-bottom: 10px;
@@ -456,7 +451,6 @@ h1, h2, .navbar .logo {
     border-bottom-left-radius: 0;
 }
 
-/* 聊天输入区域样式 */
 .chat-input {
     display: flex;
     padding: 10px;
@@ -486,8 +480,149 @@ h1, h2, .navbar .logo {
     background-color: #a40000;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content a {
+    color: #c50000;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
 /* 响应式设计 */
 @media screen and (max-width: 768px) {
+    /* 移动设备导航栏样式 */
+    .navbar {
+        position: relative;
+        padding: 10px 10px;
+    }
+
+    /* 隐藏默认导航项 */
+    .navbar ul,
+    .search-box,
+    .buttons {
+        display: none;
+    }
+
+    /* 显示菜单图标 */
+    .navbar .menu-icon {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .navbar .menu-icon span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: #232c53;
+        border-radius: 4px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+    }
+
+    .navbar .menu-icon span:nth-child(1) {
+        top: 0px;
+    }
+
+    .navbar .menu-icon span:nth-child(2),
+    .navbar .menu-icon span:nth-child(3) {
+        top: 10px;
+    }
+
+    .navbar .menu-icon span:nth-child(4) {
+        top: 20px;
+    }
+
+    .navbar.open .menu-icon span:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+
+    .navbar.open .menu-icon span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+
+    .navbar.open .menu-icon span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+    .navbar.open .menu-icon span:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+
+    .navbar.open ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar.open .search-box,
+    .navbar.open .buttons {
+        display: block;
+    }
+
+    .search-box,
+    .buttons {
+        display: block;
+    }
+
+    #navbarMenu {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+        background-color: #ffffff;
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        bottom: -200px;
+        text-align: center;
+    }
+
+    #navbarMenu li a {
+        font-size: 20px;
+    }
+
+    .link-sections {
+        flex-direction: column;
+        align-items: flex-start; /* 改为flex-start以在移动端左对齐 */
+    }
+
+    .link-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
     .chat-button {
         right: -15px;
         padding: 10px 8px 10px 15px;
@@ -524,4 +659,69 @@ h1, h2, .navbar .logo {
     .chat-input button {
         font-size: 14px;
     }
+
+    .footer-content {
+        font-size: 14px;
+    }
+
+    body {
+        padding-bottom: 80px;
+    }
+}
+
+/* 响应式设计调整 */
+@media screen and (max-width: 1200px) {
+    .link-sections {
+        padding: 0 20px; /* 在较小屏幕上添加左右内边距 */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .link-sections {
+        flex-direction: column;
+        align-items: stretch; /* 在移动端填满宽度 */
+    }
+
+    .link-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .search-container {
+        width: 95%; /* 在小屏幕上略微增加宽度 */
+    }
+
+    .central-search,
+    .link-sections {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+/* 响应式设计调整 */
+@media screen and (max-width: 1963px) {
+    .central-search {
+        width: 100%;
+        height: auto; /* 在小屏幕上允许高度自适应 */
+        min-height: 400px; /* 设置最小高度，确保在小屏幕上仍有足够空间 */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .central-search {
+        padding: 15px;
+        min-height: 300px;
+    }
+
+    .search-container {
+        width: 95%;
+    }
+}
+
+/* 自定义字体 */
+@font-face {
+    font-family: 'Trajan Pro';
+    src: url('../fonts/TrajanPro-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
 }
