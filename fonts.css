@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Whitney';
+    src: url('fonts/WhitneySSmAdvancedBook_normal.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trajan Pro';
+    src: url('front/Trajan/TrajanPro-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Whitney Semibold';
+    src: url('front/Other/Whitney-Semibold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 可以在这里添加更多的 @font-face 规则 */
+
+.main-logo {
+    font-family: 'Trajan Pro';
+    font-size: 24px;
+    font-weight: bold;
+    color: #CC0000;
+    /* 其他样式保持不变 */
+}
+
+.sub-logo {
+    font-family: 'Whitney Semibold' !important;
+    font-weight: 400 !important;
+    color: #000000 !important;
+    font-size: 17px !important;
+    margin-top: -5px;
+    line-height: 22.1px;
+    width: auto;
+    /* 其他样式保持不变 */
+}
+
+/* Welcome 标题样式 */
+.welcome-title {
+    font-family: 'Whitney Semibold', serif; /* 使用 Trajan Pro 字体，如果不可用则使用 serif */
+    font-size: 36px; /* 设置字体大小 */
+    font-weight: bold; /* 设置字体粗细 */
+    color: #CC0000; /* 设置字体颜色为波士顿大学红色 */
+    text-align: center; /* 文本居中 */
+    margin-bottom: 30px; /* 设置下方间距 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* 添加轻微阴影效果 */
+}
+
+/* 响应式设计：在小屏幕上调整 Welcome 标题样式 */
+@media screen and (max-width: 768px) {
+    .welcome-title {
+        font-size: 28px; /* 在小屏幕上减小字体大小 */
+        margin-bottom: 20px; /* 减小下方间距 */
+    }
+}
+
+/* 可以为其他元素添加特定的字体样式 */
