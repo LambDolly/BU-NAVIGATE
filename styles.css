@@ -11,7 +11,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('bu_background.jpg');
+    background-image: url('images/IMG_5213.JPG');/* 整个网站的背景图-暂时不给路径=白色底色，目前给了一个网上找的图 */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -30,8 +30,8 @@ body {
 
 /* 导航栏样式 */
 .navbar {
-    background-color: #ffffff; /* 使用红色背景 */
-    color: #c50000; /* 将文字颜色改为白色，以提高可读性 */
+    background-color: #ffffff; /* 使用白色背景 */
+    color: #CC0000; /* 将文字颜色改为红色 */
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -61,14 +61,10 @@ body {
 .main-logo {
     font-size: 24px;
     font-weight: bold;
-    color: #c50000;
+    color: #CC0000;
 }
 
-.sub-logo {
-    font-size: 14px;
-    margin-top: -5px;
-    color: #c50000;
-}
+
 
 .navbar ul {
     list-style-type: none;
@@ -84,13 +80,13 @@ body {
 }
 
 .navbar li a {
-    color: #000000; /* 将链接颜色改为白色 */
+    color: #000000; /* 将链接颜色改为黑色 */
     text-decoration: none;
     padding: 10px;
 }
 
 .navbar li a:hover {
-    color: #c50000; /* 悬停时稍微调暗 */
+    color: #CC0000; /* 悬停时变为红色 */
     text-decoration: underline;
 }
 
@@ -170,7 +166,7 @@ body {
 
 .search-engine-button {
     background: none;
-    border: 2px solid #c50000; /* 添加红色边框 */
+    border: 2px solid #CC0000; /* 添加红色边框 */
     border-radius: 5px; /* 添加圆角 */
     cursor: pointer;
     padding: 0;
@@ -192,7 +188,7 @@ body {
     top: calc(100% + 5px); /* 稍微增加与按钮的距离 */
     left: 0; /* 将下拉列表与按钮左对齐 */
     background-color: #ffffff;
-    border: 2px solid #c50000;
+    border: 2px solid #CC0000;
     border-radius: 5px;
     overflow: hidden;
     opacity: 0;
@@ -262,7 +258,7 @@ body {
     height: 40px; /* 设置一个固定高度 */
     padding: 0 10px 0 50px; /* 增加左侧padding，为图标留出空间 */
     font-size: 16px;
-    border: 2px solid #c50000;
+    border: 2px solid #CC0000;
     border-radius: 5px;
     text-align: center; /* 将提示文字居中显示 */
 }
@@ -274,7 +270,7 @@ body {
 .search-container button[type="submit"] {
     height: 40px; /* 与输入框高度一致 */
     padding: 0 20px;
-    background-color: #c50000;
+    background-color: #CC0000;
     color: white;
     font-size: 16px;
     border: none;
@@ -316,7 +312,7 @@ body::before {
 }
 
 .link-section h2 {
-    color: #c50000;
+    color: #CC0000;
     margin-bottom: 20px; /* 增加标题和下方文字的间距 */
     font-size: 1.2em;
     text-align: left;
@@ -348,7 +344,7 @@ body, .navbar a, .link-section a {
 }
 
 h1, h2, .navbar .logo {
-    color: #c50000;
+    color: #CC0000;
 }
 
 .chat-button {
@@ -400,7 +396,7 @@ h1, h2, .navbar .logo {
 }
 
 .chat-header {
-    background-color: #c50000;
+    background-color: #CC0000;
     color: white;
     padding: 15px;
     display: flex;
@@ -439,7 +435,7 @@ h1, h2, .navbar .logo {
 
 .user-message {
     align-self: flex-end;
-    background-color: #c50000;
+    background-color: #CC0000;
     color: white;
     border-bottom-right-radius: 0;
 }
@@ -466,7 +462,7 @@ h1, h2, .navbar .logo {
 }
 
 .chat-input button {
-    background-color: #c50000;
+    background-color: #CC0000;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -485,7 +481,7 @@ h1, h2, .navbar .logo {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #2D2926;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -504,7 +500,7 @@ h1, h2, .navbar .logo {
 }
 
 .footer-content a {
-    color: #c50000;
+    color: #CC0000;
     text-decoration: none;
 }
 
